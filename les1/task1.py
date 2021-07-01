@@ -11,6 +11,10 @@ print(str_var)  # выводим в консоль
 list_var = ["abc", 123, "Hi, I'm Alex"]  # создаем переменную типа list
 print(list_var)  # выводим в консоль
 
+bool_var = True # создаем переменную типа bool
+print(bool_var) # выводим в консоль
+
+
 int_input = int(input("Введете целое число >>>"))  # получаем и сохраняем значение переменной типа int
 print("Было введено:", int_input)  # выводим в консоль
 

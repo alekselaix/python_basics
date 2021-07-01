@@ -6,15 +6,36 @@
 # Далее запросите численность сотрудников фирмы
 # и определите прибыль фирмы в расчете на одного сотрудника
 
-proceeds = int(input("Введите выручку >>> "))
-expenses = int(input("Введите издержки >>> "))
+while True:
+    proceeds = input("Введите значение выручки >>> ")
+    if proceeds.isdigit():
+        proceeds = int(proceeds)
+        break
+
+    print('Ошибка ввода, введите число')
+
+while True:
+    expenses = input("Введите количество издержек >>> ")
+    if expenses.isdigit():
+        expenses = int(expenses)
+        break
+
+    print('Ошибка ввода, введите число')
 
 profit = proceeds - expenses  # Прибыль
 
 if profit > 0:
     roi = profit / proceeds
     print(f"Прибыль компании = {profit}, Рентабельность компании = {roi}")
-    employees = int(input("Введите колличество сотрудников >>> "))
+
+    while True:
+        employees = input("Введите колличество сотрудников >>> ")
+        if employees.isdigit():
+            employees = int(employees)
+            break
+
+        print('Ошибка ввода, введите число')
+
     profit_employees = profit / employees
     print(f"Прибыль на одного сотрудника  = {profit_employees}")
 

@@ -36,6 +36,6 @@ day = 1
 while way <= b:
     way = a + a * 0.1
     a = way
-    day = day + 1
+    day += 1
 
 print(f"Ответ: на {day}-й день спортсмен достиг результата — не менее {way:.1f} км.")

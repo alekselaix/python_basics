@@ -4,29 +4,41 @@
 # (характеристиками товара: название, цена, количество, единица измерения).
 # Структуру нужно сформировать программно, т.е. запрашивать все данные у пользователя.
 
-goods = []
-while input("Добовить товар? Ведите yes/no >>> ") == 'yes':
+# тестовый набор данных
+# goods = [(1, {'Название': 'компьютер', 'Цена': '10', 'Количество': '5', 'Ед.': 'шт.'}),
+#            (2, {'Название': 'сервер', 'Цена': '100', 'Количество': '2', 'Ед.': 'шт.'}),
+#            (3, {'Название': 'роутер', 'Цена': '30', 'Количество': '1', 'Ед.': 'шт.'}),
+#            (4, {'Название': 'принтер', 'Цена': '15', 'Количество': '2', 'Ед.': 'шт.'})]
 
-    number = int(input("Введите номер товара >>> "))
+# структура словоря вводимых данных о товаре
+goods_structure = {
+    "Название": str,
+    "Цена": int,
+    "Количество": int,
+    "Ед.": str}
 
-    user_data = {}
+goods_list = []  # список товаров
+i = 1
 
-    while input('Добаваить параметры товара? Введите yes/no >>> ') == 'yes':
-        key = input('Введите наименование параметра товара >>> ')
-        value = input('Введите значение параметра товара >>> ')
-        user_data[key] = value
-    goods.append(tuple([number, user_data]))
-print(goods)
+while True:
+    user_decision = input(f"Добавить товар? Введите yes/no >>>")
 
+    if user_decision == 'n' or user_decision == 'no':
+        break
+    else:
+        goods_info = {}
 
-# goods = [(1, {'name': 'computer', 'price': '10', 'num': '5', 'unit': 'pc.'}),
-#           (2, {'name': 'server', 'price': '100', 'num': '2', 'unit': 'pc.'}),
-#           (3, {'name': 'router', 'price': '30', 'num': '1', 'unit': 'pc.'}),
-#           (4, {'name': 'printer', 'price': '15', 'num': '2', 'unit': 'pc.'})]
+        for key, value in goods_structure.items():
+            user_input = input(f"Заполните полое {key} >>> ")
+            goods_info[key] = user_input
+
+        goods_list.append(tuple([i, goods_info]))
+        i += 1
+
 
 analytics = {}  # словарь с данными аналитики
 
-for elem in goods:
+for elem in goods_list:
     for key, value in elem[1].items():
         if key in analytics:
             analytics[key].append(value)

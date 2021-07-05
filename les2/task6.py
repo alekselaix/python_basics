@@ -4,12 +4,6 @@
 # (характеристиками товара: название, цена, количество, единица измерения).
 # Структуру нужно сформировать программно, т.е. запрашивать все данные у пользователя.
 
-# тестовые данные для отладки
-# goods = [(1, {'name': 'computer', 'price': '10', 'num': '5', 'unit': 'pc.'}),
-#           (2, {'name': 'server', 'price': '100', 'num': '2', 'unit': 'pc.'}),
-#           (3, {'name': 'router', 'price': '30', 'num': '1', 'unit': 'pc.'}),
-#           (4, {'name': 'printer', 'price': '15', 'num': '2', 'unit': 'pc.'})]
-
 goods = []
 while input("Добовить товар? Ведите yes/no >>> ") == 'yes':
 
@@ -24,6 +18,12 @@ while input("Добовить товар? Ведите yes/no >>> ") == 'yes':
     goods.append(tuple([number, user_data]))
 print(goods)
 
+
+# goods = [(1, {'name': 'computer', 'price': '10', 'num': '5', 'unit': 'pc.'}),
+#           (2, {'name': 'server', 'price': '100', 'num': '2', 'unit': 'pc.'}),
+#           (3, {'name': 'router', 'price': '30', 'num': '1', 'unit': 'pc.'}),
+#           (4, {'name': 'printer', 'price': '15', 'num': '2', 'unit': 'pc.'})]
+
 analytics = {}  # словарь с данными аналитики
 
 for elem in goods:
@@ -32,5 +32,4 @@ for elem in goods:
             analytics[key].append(value)
         else:
             analytics[key] = [value]
-
 print(analytics)

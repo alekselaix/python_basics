@@ -19,3 +19,4 @@ if user_data != " ":
     else:
         print(f"{i}\tПробел")
 
+        

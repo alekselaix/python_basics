@@ -19,17 +19,3 @@ if user_data != " ":
     else:
         print(f"{i}\tПробел")
 
-# более сложный для понимания варинат
-# user_word = []
-# i = 0
-#
-# for elem in range(user_data.count(" ") + 1):
-#
-#     user_word = user_data.split()
-#
-#     if len(str(user_word)) > 10:
-#         print(f"{i}\t{user_word[i][0:10]}")
-#
-#     else:
-#         print(f"{i}\t{user_word[i]}")
-#     i += 1

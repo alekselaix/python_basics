@@ -45,3 +45,5 @@ for elem in goods_list:
         else:
             analytics[key] = [value]
 print(analytics)
+
+
